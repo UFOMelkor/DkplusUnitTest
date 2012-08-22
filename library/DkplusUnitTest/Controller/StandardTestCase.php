@@ -24,7 +24,7 @@ class StandardTestCase extends TestCase
     /** @var SetUp\Bundle\HttpBundle */
     protected $httpBundle;
 
-    public function __construct($name = NULL, array $data = array(), $dataName = '')
+    public function __construct($name = null, array $data = array(), $dataName = '')
     {
         parent::__construct($name, $data, $dataName);
 
