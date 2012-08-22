@@ -28,11 +28,11 @@ class StandardTestCase extends TestCase
     {
         parent::__construct($name, $data, $dataName);
 
-        $this->setUp();
+        $this->initSetup();
     }
 
 
-    protected function init()
+    protected function initSetUp()
     {
         $this->pluginManager = new SetUp\StandardPluginManager($this);
         $this->httpBundle    = new SetUp\Bundle\HttpBundle($this);
