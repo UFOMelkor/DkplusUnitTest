@@ -8,6 +8,7 @@ Supports mocking of request, response, event, routematch and plugins.
 
 Controller:
 ```php
+<?php
 namespace MyModule\Controller;
 
 class IndexController
@@ -23,6 +24,7 @@ class IndexController
 
 TestCase:
 ```php
+<?php
 namespace MyModuleTest\Controller;
 
 use DkplusUnitTest\Controller\StandardTestCase;

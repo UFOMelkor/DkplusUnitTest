@@ -26,7 +26,6 @@ class StandardTestCase extends TestCase
 
     public function setUpBeforeClass()
     {
-        $this->assert
         parent::setUpBeforeClass();
 
         $this->pluginManager = new SetUp\StandardPluginManager($this);
