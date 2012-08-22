@@ -20,8 +20,6 @@ namespace DkplusUnitTest\Controller\SetUp;
  */
 interface MvcEventInterface extends SetUpInterface
 {
-    public function setUpController($controller);
-
     public function setRouteMatchParams(array $params);
 
     /** @param string $name */
