@@ -24,10 +24,16 @@ class StandardTestCase extends TestCase
     /** @var SetUp\Bundle\HttpBundle */
     protected $httpBundle;
 
-    public function setUpBeforeClass()
+    public function __construct($name = NULL, array $data = array(), $dataName = '')
     {
-        parent::setUpBeforeClass();
+        parent::__construct($name, $data, $dataName);
 
+        $this->setUp();
+    }
+
+
+    protected function init()
+    {
         $this->pluginManager = new SetUp\StandardPluginManager($this);
         $this->httpBundle    = new SetUp\Bundle\HttpBundle($this);
 
