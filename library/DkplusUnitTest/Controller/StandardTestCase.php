@@ -16,7 +16,7 @@ namespace DkplusUnitTest\Controller;
  * @author   Oskar Bley <oskar@programming-php.net>
  * @link     http://github.com/UFOMelkor/DkplusUnitTest
  */
-class ControllerTestCase extends TestCase
+class StandardTestCase extends TestCase
 {
     /** @var SetUp\PluginManagerInterface */
     protected $pluginManager;
@@ -26,6 +26,7 @@ class ControllerTestCase extends TestCase
 
     public function setUpBeforeClass()
     {
+        $this->assert
         parent::setUpBeforeClass();
 
         $this->pluginManager = new SetUp\StandardPluginManager($this);
