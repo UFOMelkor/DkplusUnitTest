@@ -35,7 +35,7 @@ abstract class AbstractPluginManager implements PluginManagerInterface
         $this->testCase = $testCase;
     }
 
-    public function applyToController(Controller $controller)
+    public function setUpController(Controller $controller)
     {
         $that                = $this;
         $this->pluginMap     = array();

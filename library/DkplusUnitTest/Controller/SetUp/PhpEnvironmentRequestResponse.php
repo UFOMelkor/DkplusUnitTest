@@ -37,7 +37,7 @@ class PhpEnvironmentRequestResponse implements RequestResponseInterface
         $this->testCase = $testCase;
     }
 
-    public function applyToController(Dispatchable $controller)
+    public function setUpController(Dispatchable $controller)
     {
         $this->request    = $this->createRequest();
         $this->response   = $this->createResponse();

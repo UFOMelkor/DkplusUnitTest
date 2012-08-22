@@ -40,10 +40,10 @@ abstract class AbstractBundle implements BundleInterface
     {
     }
 
-    public function applyToController(AbstractController $controller)
+    public function setUpController(AbstractController $controller)
     {
         foreach ($this->setUps as $setUp) {
-            $setUp->applyToController($controller);
+            $setUp->setUpController($controller);
         }
     }
 

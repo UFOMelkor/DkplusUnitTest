@@ -37,7 +37,7 @@ class MvcEvent implements MvcEventInterface
         $this->testCase = $testCase;
     }
 
-    public function applyToController(InjectApplicationEventInterface $controller)
+    public function setUpController(InjectApplicationEventInterface $controller)
     {
         $this->routeMatch = $this->createRouteMatch();
         $this->event      = $this->createMvcEvent($this->routeMatch);

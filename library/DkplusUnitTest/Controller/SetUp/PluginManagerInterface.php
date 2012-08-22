@@ -22,7 +22,7 @@ use Zend\Mvc\Controller\AbstractController as Controller;
  */
 interface PluginManagerInterface
 {
-    public function applyToController(Controller $controller);
+    public function setUpController(Controller $controller);
 
     public function registerPlugin(Plugin\AbstractPlugin $plugin);
 

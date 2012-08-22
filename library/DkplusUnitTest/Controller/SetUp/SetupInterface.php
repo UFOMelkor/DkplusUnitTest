@@ -18,6 +18,6 @@ namespace DkplusUnitTest\Controller\SetUp;
  */
 interface SetUpInterface
 {
-    public function applyToController($controller);
+    public function setUpController($controller);
 }
 

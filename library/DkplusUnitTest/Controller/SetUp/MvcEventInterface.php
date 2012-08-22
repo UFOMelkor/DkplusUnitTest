@@ -22,7 +22,7 @@ use Zend\Mvc\InjectApplicationEventInterface;
  */
 interface MvcEventInterface extends SetUpInterface
 {
-    public function applyToController(InjectApplicationEventInterface $controller);
+    public function setUpController(InjectApplicationEventInterface $controller);
 
     public function setRouteMatchParams(array $params);
 

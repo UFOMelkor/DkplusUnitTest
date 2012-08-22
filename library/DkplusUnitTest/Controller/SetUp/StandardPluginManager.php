@@ -20,7 +20,7 @@ use \PHPUnit_Framework_TestCase as PhpUnitTestCase;
  */
 class StandardPluginManager extends PluginManager
 {
-    public function __construct(\PHPUnit_Framework_TestCase $testCase)
+    public function __construct(\PhpUnitTestCase $testCase)
     {
         parent::__construct($testCase);
 

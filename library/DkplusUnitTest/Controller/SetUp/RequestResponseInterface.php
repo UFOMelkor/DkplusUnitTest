@@ -22,9 +22,9 @@ use Zend\Stdlib\ResponseInterface as Response;
  * @author     Oskar Bley <oskar@programming-php.net>
  * @link       http://github.com/UFOMelkor/DkplusUnitTest
  */
-interface RequestResponseInterface
+interface RequestResponseInterface extends SetUpInterface
 {
-    public function applyToController(Dispatchable $controller);
+    public function setUpController(Dispatchable $controller);
 
     /** @return Request|\PHPUnit_Framework_MockObject_MockObject */
     public function getRequest();

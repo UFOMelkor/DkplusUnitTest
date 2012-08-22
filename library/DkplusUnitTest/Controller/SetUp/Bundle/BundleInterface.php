@@ -20,6 +20,5 @@ use DkplusUnitTest\Controller\SetUp\SetUpInterface;
  */
 interface BundleInterface extends SetUpInterface
 {
-    public function applyToController($controller);
 }
 

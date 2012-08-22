@@ -32,7 +32,7 @@ class TestCase extends BaseTestCase
     protected function setUpController($controller)
     {
         foreach ($this->setUps as $setUp) {
-            $setUp->applyToController($controller);
+            $setUp->setUpController($controller);
         }
     }
 }

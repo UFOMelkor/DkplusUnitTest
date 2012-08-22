@@ -22,9 +22,9 @@ class PluginManager extends AbstractPluginManager
 {
     private $plugins = array();
 
-    public function applyToController(Controller $controller)
+    public function setUpController(Controller $controller)
     {
-        parent::applyToController($controller);
+        parent::setupController($controller);
 
         foreach ($this->plugins as $plugin) {
             /** @var $plugin Plugin\AbstractPlugin */
