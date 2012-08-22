@@ -1,24 +1,26 @@
 <?php
 /**
- * @category DkplusTest
- * @package  TestCase
- * @author   Oskar Bley <oskar@programming-php.net>
- * @link     http://github.com/UFOMelkor/DkplusTest
+ * @category   DkplusUnitTest
+ * @package    Controller
+ * @subpackage SetUp
+ * @author     Oskar Bley <oskar@programming-php.net>
+ * @link       http://github.com/UFOMelkor/DkplusUnitTest
  */
 
-namespace DkplusTest\Controller\Setup;
+namespace DkplusUnitTest\Controller\SetUp;
 
 use Zend\Mvc\InjectApplicationEventInterface;
 
 /**
- * Preparing a controller to be testet with mvc-data.
+ * Setting up a mvc event mock for the controller.
  *
- * @category DkplusTest
- * @package  TestCase
- * @author   Oskar Bley <oskar@programming-php.net>
- * @link     http://github.com/UFOMelkor/DkplusTest
+ * @category   DkplusUnitTest
+ * @package    Controller
+ * @subpackage SetUp
+ * @author     Oskar Bley <oskar@programming-php.net>
+ * @link       http://github.com/UFOMelkor/DkplusUnitTest
  */
-interface MvcEventInterface extends SetupInterface
+interface MvcEventInterface extends SetUpInterface
 {
     public function applyToController(InjectApplicationEventInterface $controller);
 

@@ -1,0 +1,20 @@
+{
+    "name": "dkplus/unit-test",
+    "description": "Zend Framework 2 Controller Unit Testing",
+    "type": "library",
+    "keywords": [
+        "framework",
+        "zf2",
+        "phpunit",
+        "unit"
+    ],
+    "homepage": "https://github.com/UFOMelkor/DkplusUnitTest",
+    "require": {
+        "php": ">=5.3.3"
+    },
+    "autoload": {
+        "psr-0": {
+            "DkplusUnitTest": "library/"
+        }
+    }
+}

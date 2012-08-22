@@ -1,22 +1,22 @@
 <?php
 /**
- * @category DkplusTest
+ * @category DkplusUnitTest
  * @package  TestCase
  * @author   Oskar Bley <oskar@programming-php.net>
- * @link     http://github.com/UFOMelkor/DkplusTest
+ * @link     http://github.com/UFOMelkor/DkplusUnitTest
  */
 
-namespace DkplusTest;
+namespace DkplusUnitTest;
 
 use PHPUnit_Framework_TestCase as PhpUnitTestCase;
 
 /**
  * Extension of phpunit-testcase with some utily functions.
  *
- * @category DkplusTest
+ * @category DkplusUnitTest
  * @package  TestCase
  * @author   Oskar Bley <oskar@programming-php.net>
- * @link     http://github.com/UFOMelkor/DkplusTest
+ * @link     http://github.com/UFOMelkor/DkplusUnitTest
  */
 class TestCase extends PhpUnitTestCase
 {

@@ -1,19 +1,13 @@
 <?php
 /**
- * $Id$
- *
- * PHP Version 5.3
- *
- * @category   Dkplus
- * @package    Test
- * @subpackage Controller
- * @author     Oskar Bley <oskar@steppenhahn.de>
- * @license    http://creativecommons.org/licenses/by-sa/3.0/ CC BY-SA 3.0
- * @version    SVN: $Revision$
- * @link       http://lib.dkplus.org/
+ * @category   DkplusUnitTest
+ * @package    Controller
+ * @subpackage SetUp
+ * @author     Oskar Bley <oskar@programming-php.net>
+ * @link       http://github.com/UFOMelkor/DkplusUnitTest
  */
 
-namespace Dkplus\Test\Controller\Setup;
+namespace DkplusUnitTest\Controller\SetUp;
 
 use PHPUnit_Framework_TestCase as PhpUnitTestCase;
 use Zend\Stdlib\DispatchableInterface as Dispatchable;
@@ -21,15 +15,11 @@ use Zend\Http\PhpEnvironment\Request as Request;
 use Zend\Http\PhpEnvironment\Response as Response;
 
 /**
- * Preparing a controller to be testet with mvc-data.
- *
- * @category   Dkplus
- * @package    Test
- * @subpackage Controller
- * @author     Oskar Bley <oskar@steppenhahn.de>
- * @license    http://creativecommons.org/licenses/by-sa/3.0/ CC BY-SA 3.0
- * @version    Release: $Revision$
- * @link       http://lib.dkplus.org/
+ * @category   DkplusUnitTest
+ * @package    Controller
+ * @subpackage SetUp
+ * @author     Oskar Bley <oskar@programming-php.net>
+ * @link       http://github.com/UFOMelkor/DkplusUnitTest
  */
 class PhpEnvironmentRequestResponse implements RequestResponseInterface
 {
@@ -88,19 +78,21 @@ class PhpEnvironmentRequestResponse implements RequestResponseInterface
     {
         $this->request->expects($this->testCase->any())
                       ->method('getQuery')
-                      ->will($this->testCase->returnCallback(
-                          function ($key = null, $default = null) use ($data) {
-                              if ($key === null) {
-                                  return $data;
-                              }
+                      ->will(
+                          $this->testCase->returnCallback(
+                              function ($key = null, $default = null) use ($data) {
+                                  if ($key === null) {
+                                      return $data;
+                                  }
 
-                              if (\array_key_exists($key, $data)) {
-                                  return $data[$key];
-                              }
+                                  if (\array_key_exists($key, $data)) {
+                                      return $data[$key];
+                                  }
 
-                              return $default;
-                          }
-                      ));
+                                  return $default;
+                              }
+                          )
+                      );
 
         if ($isGetRequest) {
             $this->request->expects($this->testCase->any())
@@ -113,19 +105,21 @@ class PhpEnvironmentRequestResponse implements RequestResponseInterface
     {
         $this->request->expects($this->testCase->any())
                       ->method('getPost')
-                      ->will($this->testCase->returnCallback(
-                          function ($key = null, $default = null) use ($data) {
-                              if ($key === null) {
-                                  return $data;
-                              }
+                      ->will(
+                          $this->testCase->returnCallback(
+                              function ($key = null, $default = null) use ($data) {
+                                  if ($key === null) {
+                                      return $data;
+                                  }
 
-                              if (\array_key_exists($key, $data)) {
-                                  return $data[$key];
-                              }
+                                  if (\array_key_exists($key, $data)) {
+                                      return $data[$key];
+                                  }
 
-                              return $default;
-                          }
-                      ));
+                                  return $default;
+                              }
+                          )
+                      );
 
         if ($isPostRequest) {
             $this->request->expects($this->testCase->any())

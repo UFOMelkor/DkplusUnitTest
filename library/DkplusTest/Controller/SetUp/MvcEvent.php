@@ -1,34 +1,24 @@
 <?php
 /**
- * $Id$
- *
- * PHP Version 5.3
- *
- * @category   Dkplus
- * @package    Test
- * @subpackage Controller
- * @author     Oskar Bley <oskar@steppenhahn.de>
- * @license    http://creativecommons.org/licenses/by-sa/3.0/ CC BY-SA 3.0
- * @version    SVN: $Revision$
- * @link       http://lib.dkplus.org/
+ * @category   DkplusUnitTest
+ * @package    Controller
+ * @subpackage SetUp
+ * @author     Oskar Bley <oskar@programming-php.net>
+ * @link       http://github.com/UFOMelkor/DkplusUnitTest
  */
 
-namespace Dkplus\Test\Controller\Setup;
+namespace DkplusUnitTest\Controller\SetUp;
 
 use PHPUnit_Framework_TestCase as PhpUnitTestCase;
 use Zend\Mvc\InjectApplicationEventInterface;
 use Zend\Mvc\Router\RouteMatch;
 
 /**
- * Preparing a controller to be testet with mvc-data.
- *
- * @category   Dkplus
- * @package    Test
- * @subpackage Controller
- * @author     Oskar Bley <oskar@steppenhahn.de>
- * @license    http://creativecommons.org/licenses/by-sa/3.0/ CC BY-SA 3.0
- * @version    Release: $Revision$
- * @link       http://lib.dkplus.org/
+ * @category   DkplusUnitTest
+ * @package    Controller
+ * @subpackage SetUp
+ * @author     Oskar Bley <oskar@programming-php.net>
+ * @link       http://github.com/UFOMelkor/DkplusUnitTest
  */
 class MvcEvent implements MvcEventInterface
 {
@@ -107,14 +97,16 @@ class MvcEvent implements MvcEventInterface
                               ->will($this->testCase->returnValue($params));
         $this->getRouteMatch()->expects($this->testCase->any())
                               ->method('getParam')
-                              ->will($this->testCase->returnCallback(
-                                  function ($key, $default = null) use ($params) {
-                                    if (\array_key_exists($key, $params)) {
-                                        return $params[$key];
-                                    }
-                                    return $default;
-                                  }
-                              ));
+                              ->will(
+                                  $this->testCase->returnCallback(
+                                      function ($key, $default = null) use ($params) {
+                                          if (\array_key_exists($key, $params)) {
+                                              return $params[$key];
+                                          }
+                                          return $default;
+                                      }
+                                  )
+                              );
     }
-
 }
+

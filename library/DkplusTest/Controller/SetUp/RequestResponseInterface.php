@@ -1,26 +1,26 @@
 <?php
 /**
- * @category   DkplusTest
+ * @category   DkplusUnitTest
  * @package    Controller
  * @subpackage SetUp
  * @author     Oskar Bley <oskar@programming-php.net>
- * @link       http://github.com/UFOMelkor/DkplusTest
+ * @link       http://github.com/UFOMelkor/DkplusUnitTest
  */
 
-namespace Dkplus\Test\Controller\Setup;
+namespace DkplusUnitTest\Controller\SetUp;
 
 use Zend\Stdlib\DispatchableInterface as Dispatchable;
 use Zend\Stdlib\RequestInterface as Request;
 use Zend\Stdlib\ResponseInterface as Response;
 
 /**
- * Preparing a controller to be testet with mvc-data.
+ * Setting up a request and a response mock for the controller.
  *
- * @category   DkplusTest
+ * @category   DkplusUnitTest
  * @package    Controller
  * @subpackage SetUp
  * @author     Oskar Bley <oskar@programming-php.net>
- * @link       http://github.com/UFOMelkor/DkplusTest
+ * @link       http://github.com/UFOMelkor/DkplusUnitTest
  */
 interface RequestResponseInterface
 {
