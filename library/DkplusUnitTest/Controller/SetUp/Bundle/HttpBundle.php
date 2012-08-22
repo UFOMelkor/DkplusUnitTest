@@ -31,8 +31,8 @@ class HttpBundle extends AbstractBundle
         $this->requestResponseSetUp = new SetUp\PhpEnvironmentRequestResponse($this->testCase);
         $this->mvcEventSetup        = new SetUp\MvcEvent($this->testCase);
 
-        $this->addSetUp($this->requestResponseSetUp);
         $this->addSetUp($this->mvcEventSetup);
+        $this->addSetUp($this->requestResponseSetUp);
     }
 
     /** @return \Zend\Mvc\MvcEvent|\PHPUnit_Framework_MockObject_MockObject */
