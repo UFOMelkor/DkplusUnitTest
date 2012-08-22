@@ -36,7 +36,7 @@ class IndexControllerTest extends StandardTestCase
     public function setUp()
     {
         $this->controller = \new MyModule\Controller\IndexController();
-        $this->setUpController($controller);
+        $this->setUpController($this->controller);
     }
 
     public function testIndexActionReturnsIdFromQuery()
