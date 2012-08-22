@@ -18,10 +18,8 @@ namespace DkplusUnitTest\Controller\SetUp;
  * @author     Oskar Bley <oskar@programming-php.net>
  * @link       http://github.com/UFOMelkor/DkplusUnitTest
  */
-interface PluginManagerInterface
+interface PluginManagerInterface extends SetUpInterface
 {
-    public function setUpController($controller);
-
     public function registerPlugin(Plugin\AbstractPlugin $plugin);
 
     /** @return \PHPUnit_Framework_MockObject_MockObject */

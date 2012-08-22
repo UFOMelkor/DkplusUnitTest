@@ -23,8 +23,6 @@ use Zend\Stdlib\ResponseInterface as Response;
  */
 interface RequestResponseInterface extends SetUpInterface
 {
-    public function setUpController($controller);
-
     /** @return Request|\PHPUnit_Framework_MockObject_MockObject */
     public function getRequest();
 
