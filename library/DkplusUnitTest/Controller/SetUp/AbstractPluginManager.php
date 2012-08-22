@@ -35,8 +35,14 @@ abstract class AbstractPluginManager implements PluginManagerInterface
         $this->testCase = $testCase;
     }
 
-    public function setUpController(Controller $controller)
+    public function setUpController($controller)
     {
+        if (!$controller instanceof Controller
+            && !$controller->hasMethod('setPluginManager')
+        ) {
+            throw new \InvalidArgumentException('$controller must be an instance of Zend\Mvc\Controller\AbstractController or must have a method setPluginManager()');
+        }
+
         $that                = $this;
         $this->pluginMap     = array();
         $this->pluginManager = $this->createPluginManager();

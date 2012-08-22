@@ -9,8 +9,6 @@
 
 namespace DkplusUnitTest\Controller\SetUp;
 
-use Zend\Mvc\Controller\AbstractController as Controller;
-
 /**
  * @category   DkplusUnitTest
  * @package    Controller
@@ -22,7 +20,7 @@ class PluginManager extends AbstractPluginManager
 {
     private $plugins = array();
 
-    public function setUpController(Controller $controller)
+    public function setUpController($controller)
     {
         parent::setupController($controller);
 

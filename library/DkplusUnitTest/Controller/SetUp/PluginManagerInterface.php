@@ -9,8 +9,6 @@
 
 namespace DkplusUnitTest\Controller\SetUp;
 
-use Zend\Mvc\Controller\AbstractController as Controller;
-
 /**
  * Adding a mocked plugin manager to the controller.
  *
@@ -22,7 +20,7 @@ use Zend\Mvc\Controller\AbstractController as Controller;
  */
 interface PluginManagerInterface
 {
-    public function setUpController(Controller $controller);
+    public function setUpController($controller);
 
     public function registerPlugin(Plugin\AbstractPlugin $plugin);
 

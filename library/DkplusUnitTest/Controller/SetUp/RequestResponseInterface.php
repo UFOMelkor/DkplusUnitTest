@@ -9,7 +9,6 @@
 
 namespace DkplusUnitTest\Controller\SetUp;
 
-use Zend\Stdlib\DispatchableInterface as Dispatchable;
 use Zend\Stdlib\RequestInterface as Request;
 use Zend\Stdlib\ResponseInterface as Response;
 
@@ -24,7 +23,7 @@ use Zend\Stdlib\ResponseInterface as Response;
  */
 interface RequestResponseInterface extends SetUpInterface
 {
-    public function setUpController(Dispatchable $controller);
+    public function setUpController($controller);
 
     /** @return Request|\PHPUnit_Framework_MockObject_MockObject */
     public function getRequest();

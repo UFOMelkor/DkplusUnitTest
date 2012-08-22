@@ -37,8 +37,12 @@ class MvcEvent implements MvcEventInterface
         $this->testCase = $testCase;
     }
 
-    public function setUpController(InjectApplicationEventInterface $controller)
+    public function setUpController($controller)
     {
+        if (!$controller instanceof InjectApplicationEventInterface) {
+            throw new \InvalidArgumentException('$controller must be an instance of Zend\Mvc\InjectApplicationEventInterface');
+        }
+
         $this->routeMatch = $this->createRouteMatch();
         $this->event      = $this->createMvcEvent($this->routeMatch);
 

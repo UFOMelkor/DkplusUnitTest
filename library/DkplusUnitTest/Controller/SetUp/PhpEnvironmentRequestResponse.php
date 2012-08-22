@@ -37,8 +37,12 @@ class PhpEnvironmentRequestResponse implements RequestResponseInterface
         $this->testCase = $testCase;
     }
 
-    public function setUpController(Dispatchable $controller)
+    public function setUpController($controller)
     {
+        if (!$controller instanceof Dispatchable) {
+            throw new \InvalidArgumentException('$controller must be an instance of Zend\Stdlib\Dispatchable');
+        }
+
         $this->request    = $this->createRequest();
         $this->response   = $this->createResponse();
 

@@ -9,8 +9,6 @@
 
 namespace DkplusUnitTest\Controller\SetUp;
 
-use Zend\Mvc\InjectApplicationEventInterface;
-
 /**
  * Setting up a mvc event mock for the controller.
  *
@@ -22,7 +20,7 @@ use Zend\Mvc\InjectApplicationEventInterface;
  */
 interface MvcEventInterface extends SetUpInterface
 {
-    public function setUpController(InjectApplicationEventInterface $controller);
+    public function setUpController($controller);
 
     public function setRouteMatchParams(array $params);
 
