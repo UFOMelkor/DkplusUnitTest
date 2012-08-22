@@ -24,14 +24,14 @@ class HttpBundle extends AbstractBundle
     private $requestResponseSetUp;
 
     /** @var SetUp\MvcEvent */
-    private $mvcEventSetup;
+    private $mvcEventSetUp;
 
     protected function init()
     {
         $this->requestResponseSetUp = new SetUp\PhpEnvironmentRequestResponse($this->testCase);
-        $this->mvcEventSetup        = new SetUp\MvcEvent($this->testCase);
+        $this->mvcEventSetUp        = new SetUp\MvcEvent($this->testCase);
 
-        $this->addSetUp($this->mvcEventSetup);
+        $this->addSetUp($this->mvcEventSetUp);
         $this->addSetUp($this->requestResponseSetUp);
     }
 

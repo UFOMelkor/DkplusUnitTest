@@ -100,5 +100,10 @@ class StandardTestCase extends TestCase
     {
         return $this->pluginManager->getPlugin($name);
     }
+
+    protected function registerPlugin(SetUp\Plugin\AbstractPlugin $plugin)
+    {
+        $this->pluginManager->registerPlugin($plugin);
+    }
 }
 
