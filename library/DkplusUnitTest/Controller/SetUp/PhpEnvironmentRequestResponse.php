@@ -137,7 +137,7 @@ class PhpEnvironmentRequestResponse implements RequestResponseInterface
     {
         $this->getRequest()->expects($this->testCase->any())
                            ->method('isXmlHttpRequest')
-                           ->will($this->returnValue($flag));
+                           ->will($this->testCase->returnValue($flag));
     }
 }
 
