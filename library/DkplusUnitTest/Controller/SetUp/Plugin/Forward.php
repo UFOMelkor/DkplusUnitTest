@@ -21,8 +21,7 @@ class Forward extends AbstractPlugin
     /** @return \PHPUnit_Framework_MockObject_MockObject */
     public function createMock()
     {
-        $this->mock = $this->testCase->getMock('Zend\Mvc\Controller\Plugin\Forward');
-        return $this->mock;
+        return $this->testCase->getMock('Zend\Mvc\Controller\Plugin\Forward');
     }
 
     /** @return string */

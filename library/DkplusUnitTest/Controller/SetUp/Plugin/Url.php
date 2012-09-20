@@ -21,8 +21,7 @@ class Url extends AbstractPlugin
     /** @return \PHPUnit_Framework_MockObject_MockObject */
     public function createMock()
     {
-        $this->mock = $this->testCase->getMock('Zend\Mvc\Controller\Plugin\Url');
-        return $this->mock;
+        return $this->testCase->getMock('Zend\Mvc\Controller\Plugin\Url');
     }
 
     /** @return string */

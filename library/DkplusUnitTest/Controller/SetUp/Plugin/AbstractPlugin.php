@@ -23,9 +23,6 @@ abstract class AbstractPlugin
     /** @var PhpUnitTestCase */
     protected $testCase;
 
-    /** @var \PHPUnit_Framework_MockObject_MockObject */
-    protected $mock;
-
     public function __construct(PhpUnitTestCase $testCase)
     {
         $this->testCase = $testCase;

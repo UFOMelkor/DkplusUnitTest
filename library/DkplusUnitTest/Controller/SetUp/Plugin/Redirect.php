@@ -21,8 +21,7 @@ class Redirect extends AbstractPlugin
     /** @return \PHPUnit_Framework_MockObject_MockObject */
     public function createMock()
     {
-        $this->mock = $this->testCase->getMock('Zend\Mvc\Controller\Plugin\Redirect');
-        return $this->mock;
+        return $this->testCase->getMock('Zend\Mvc\Controller\Plugin\Redirect');
     }
 
     /** @return string */
