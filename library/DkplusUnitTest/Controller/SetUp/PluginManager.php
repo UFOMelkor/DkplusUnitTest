@@ -32,8 +32,15 @@ class PluginManager extends AbstractPluginManager
 
     public function registerPlugin(Plugin\AbstractPlugin $plugin)
     {
-        $this->plugins[$plugin->getName()] = $plugin;
-        $this->pluginMap[$plugin->getName()] = $plugin->createMock();
+        $mock  = $plugin->createMock();
+        $names = \is_array($plugin->getName())
+               ? $plugin->getName()
+               : array($plugin->getName());
+
+        foreach ($names as $name) {
+            $this->plugins[$name]   = $plugin;
+            $this->pluginMap[$name] = $mock;
+        }
     }
 
     /** @return \PHPUnit_Framework_MockObject_MockObject */

@@ -12,6 +12,7 @@ return array(
     'DkplusUnitTest\Controller\SetUp\Plugin\FlashMessenger'         => __DIR__ . '/library/DkplusUnitTest/Controller/SetUp/Plugin/FlashMessenger.php',
     'DkplusUnitTest\Controller\SetUp\Plugin\Forward'                => __DIR__ . '/library/DkplusUnitTest/Controller/SetUp/Plugin/Forward.php',
     'DkplusUnitTest\Controller\SetUp\Plugin\Layout'                 => __DIR__ . '/library/DkplusUnitTest/Controller/SetUp/Plugin/Layout.php',
+    'DkplusUnitTest\Controller\SetUp\Plugin\PostRedirectGet'        => __DIR__ . '/library/DkplusUnitTest/Controller/SetUp/Plugin/PostRedirectGet.php',
     'DkplusUnitTest\Controller\SetUp\Plugin\Redirect'               => __DIR__ . '/library/DkplusUnitTest/Controller/SetUp/Plugin/Redirect.php',
     'DkplusUnitTest\Controller\SetUp\Plugin\Url'                    => __DIR__ . '/library/DkplusUnitTest/Controller/SetUp/Plugin/Url.php',
     'DkplusUnitTest\Controller\SetUp\PluginManager'                 => __DIR__ . '/library/DkplusUnitTest/Controller/SetUp/PluginManager.php',

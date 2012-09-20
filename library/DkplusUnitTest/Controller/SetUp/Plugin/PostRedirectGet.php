@@ -9,8 +9,6 @@
 
 namespace DkplusUnitTest\Controller\SetUp\Plugin;
 
-use PHPUnit_Framework_TestCase as PhpUnitTestCase;
-
 /**
  * @category   DkplusUnitTest
  * @package    Controller
@@ -18,20 +16,18 @@ use PHPUnit_Framework_TestCase as PhpUnitTestCase;
  * @author     Oskar Bley <oskar@programming-php.net>
  * @link       http://github.com/UFOMelkor/DkplusUnitTest
  */
-abstract class AbstractPlugin
+class PostRedirectGet extends AbstractPlugin
 {
-    /** @var PhpUnitTestCase */
-    protected $testCase;
-
-    public function __construct(PhpUnitTestCase $testCase)
+    /** @return \PHPUnit_Framework_MockObject_MockObject */
+    public function createMock()
     {
-        $this->testCase = $testCase;
+        return $this->testCase->getMock('Zend\Mvc\Controller\Plugin\PostRedirectGet');
     }
 
-    /** @return \PHPUnit_Framework_MockObject_MockObject */
-    abstract public function createMock();
-
-    /** @return array|string */
-    abstract public function getName();
+    /** @return array */
+    public function getName()
+    {
+        return array('prg', 'postredirectget');
+    }
 }
 

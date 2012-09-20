@@ -27,6 +27,7 @@ class StandardPluginManager extends PluginManager
         $this->registerPlugin(new Plugin\FlashMessenger($testCase));
         $this->registerPlugin(new Plugin\Forward($testCase));
         $this->registerPlugin(new Plugin\Layout($testCase));
+        $this->registerPlugin(new Plugin\PostRedirectGet($testCase));
         $this->registerPlugin(new Plugin\Redirect($testCase));
         $this->registerPlugin(new Plugin\Url($testCase));
     }

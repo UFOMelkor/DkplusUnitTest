@@ -105,5 +105,33 @@ class StandardTestCase extends TestCase
     {
         $this->pluginManager->registerPlugin($plugin);
     }
+
+    public function expectsRedirectToRoute($route = null, array $params = array(), $options = array(), $reuseMatchedParams = false)
+    {
+        $this->plugin('redirect')->expects($this->once())
+                                ->method('toRoute')
+                                ->with($route, $params, $options, $reuseMatchedParams);
+    }
+
+    public function expectsRedirectToUrl($url)
+    {
+        $this->plugin('redirect')->expects($this->once())
+                                 ->method('toUrl')
+                                 ->with($url);
+    }
+
+    public function expectsFlashMessengerToSetNamespace($namespace)
+    {
+        $this->plugin('flashMessenger')->expects($this->once())
+                                       ->method('setNamespace')
+                                       ->with($namespace);
+    }
+
+    public function expectsFlashMessengerToAddMessage($message)
+    {
+        $this->plugin('flashMessenger')->expects($this->once())
+                                       ->method('addMessage')
+                                       ->with($message);
+    }
 }
 
