@@ -23,14 +23,34 @@ class TestCase extends PhpUnitTestCase
     /**
      * Creates an mock object that does not use the original constructor.
      *
-     * @param  string $className
+     * @param  string  $originalClassName
+     * @param  array   $methods
+     * @param  array   $arguments
+     * @param  string  $mockClassName
+     * @param  boolean $callOriginalClone
+     * @param  boolean $callAutoload
+     * @param  boolean $cloneArguments
      * @return \PHPUnit_Framework_MockObject_MockObject
      */
-    protected function getMockIgnoringConstructor($className)
-    {
-        return $this->getMockBuilder($className)
-                    ->disableOriginalConstructor()
-                    ->getMock();
+    protected function getMockIgnoringConstructor(
+        $originalClassName,
+        $methods = array(),
+        array $arguments = array(),
+        $mockClassName = '',
+        $callOriginalClone = true,
+        $callAutoload = true,
+        $cloneArguments = false
+    ) {
+        return $this->getMock(
+            $originalClassName,
+            $methods,
+            $arguments,
+            $mockClassName,
+            false,
+            $callOriginalClone,
+            $callAutoload,
+            $cloneArguments
+        );
     }
 
     /**
@@ -47,3 +67,4 @@ class TestCase extends PhpUnitTestCase
         $reflector->setValue($object, $value);
     }
 }
+
