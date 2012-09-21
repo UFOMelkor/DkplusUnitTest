@@ -106,8 +106,12 @@ class StandardTestCase extends TestCase
         $this->pluginManager->registerPlugin($plugin);
     }
 
-    public function expectsRedirectToRoute($route = null, array $params = array(), $options = array(), $reuseMatchedParams = false)
-    {
+    public function expectsRedirectToRoute(
+        $route = null,
+        array $params = array(),
+        $options = array(),
+        $reuseMatchedParams = false
+    ) {
         $this->plugin('redirect')->expects($this->once())
                                 ->method('toRoute')
                                 ->with($route, $params, $options, $reuseMatchedParams);
