@@ -18,6 +18,8 @@ namespace DkplusUnitTest\Controller\SetUp;
  */
 class PluginManager extends AbstractPluginManager
 {
+
+    /** @var Plugin\AbstractPlugin[] */
     private $plugins = array();
 
     public function setUpController($controller)
@@ -25,8 +27,14 @@ class PluginManager extends AbstractPluginManager
         parent::setupController($controller);
 
         foreach ($this->plugins as $plugin) {
-            /** @var $plugin Plugin\AbstractPlugin */
-            $this->pluginMap[$plugin->getName()] = $plugin->createMock();
+            $mock = $plugin->createMock();
+            $names = \is_array($plugin->getName())
+                   ? $plugin->getName()
+                   : array($plugin->getName());
+
+            foreach ($names as $name) {
+                $this->pluginMap[$name] = $mock;
+            }
         }
     }
 
