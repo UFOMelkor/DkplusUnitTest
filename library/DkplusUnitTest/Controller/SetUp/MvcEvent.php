@@ -31,6 +31,9 @@ class MvcEvent implements MvcEventInterface
     /** @var \Zend\Mvc\MvcEvent\PHPUnit_Framework_MockObject_MockObject */
     protected $event;
 
+    /** @var array */
+    protected $routeMatchParams = array();
+
     /** @param PhpUnitTestCase $testCase */
     public function __construct(PhpUnitTestCase $testCase)
     {
@@ -83,7 +86,7 @@ class MvcEvent implements MvcEventInterface
                                      ->getMock();
         $routeMatch->expects($this->testCase->any())
                    ->method('getParams')
-                   ->will($this->testCase->returnValue(array()));
+                   ->will($this->testCase->returnCallback(array($this, 'getRouteMatchParams')));
         return $routeMatch;
     }
 
@@ -94,11 +97,14 @@ class MvcEvent implements MvcEventInterface
                               ->will($this->testCase->returnValue($name));
     }
 
+    public function getRouteMatchParams()
+    {
+        return $this->routeMatchParams;
+    }
+
     public function setRouteMatchParams(array $params)
     {
-        $this->getRouteMatch()->expects($this->testCase->any())
-                              ->method('getParams')
-                              ->will($this->testCase->returnValue($params));
+        $this->routeMatchParams = $params;
         $this->getRouteMatch()->expects($this->testCase->any())
                               ->method('getParam')
                               ->will(
@@ -113,4 +119,3 @@ class MvcEvent implements MvcEventInterface
                               );
     }
 }
-
