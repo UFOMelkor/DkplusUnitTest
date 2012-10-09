@@ -80,23 +80,25 @@ class PhpEnvironmentRequestResponse implements RequestResponseInterface
 
     public function setQueryData(array $data, $isGetRequest = true)
     {
+        $params = $this->testCase->getMock('Zend\Stdlib\Parameters');
+        $params->expects($this->testCase->any())
+               ->method('toArray')
+               ->will($this->testCase->returnValue($data));
+        $params->expects($this->testCase->any())
+               ->method('get')
+               ->will(
+                   $this->testCase->returnCallback(
+                       function ($key, $default = null) use ($data) {
+                           if (\array_key_exists($key, $data)) {
+                               return $data[$key];
+                           }
+                           return $default;
+                       }
+                   )
+               );
         $this->request->expects($this->testCase->any())
                       ->method('getQuery')
-                      ->will(
-                          $this->testCase->returnCallback(
-                              function ($key = null, $default = null) use ($data) {
-                                  if ($key === null) {
-                                      return $data;
-                                  }
-
-                                  if (\array_key_exists($key, $data)) {
-                                      return $data[$key];
-                                  }
-
-                                  return $default;
-                              }
-                          )
-                      );
+                      ->will($this->testCase->returnValue($params));
 
         if ($isGetRequest) {
             $this->request->expects($this->testCase->any())
@@ -107,23 +109,25 @@ class PhpEnvironmentRequestResponse implements RequestResponseInterface
 
     public function setPostData(array $data, $isPostRequest = true)
     {
+        $params = $this->testCase->getMock('Zend\Stdlib\Parameters');
+        $params->expects($this->testCase->any())
+               ->method('toArray')
+               ->will($this->testCase->returnValue($data));
+        $params->expects($this->testCase->any())
+               ->method('get')
+               ->will(
+                   $this->testCase->returnCallback(
+                       function ($key, $default = null) use ($data) {
+                           if (\array_key_exists($key, $data)) {
+                               return $data[$key];
+                           }
+                           return $default;
+                       }
+                   )
+               );
         $this->request->expects($this->testCase->any())
                       ->method('getPost')
-                      ->will(
-                          $this->testCase->returnCallback(
-                              function ($key = null, $default = null) use ($data) {
-                                  if ($key === null) {
-                                      return $data;
-                                  }
-
-                                  if (\array_key_exists($key, $data)) {
-                                      return $data[$key];
-                                  }
-
-                                  return $default;
-                              }
-                          )
-                      );
+                      ->will($this->testCase->returnValue($params));
 
         if ($isPostRequest) {
             $this->request->expects($this->testCase->any())
